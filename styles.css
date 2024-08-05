@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Черный цвет фона страницы */
+    color: #fff; /* Белый цвет текста для контраста */
+    margin: 0;
+    padding: 0;
+}
+
+.tier-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tier-item {
+    background: #333; /* Серый цвет фона панельки фильма */
+    border: 2px solid #555; /* Более светлый серый для границы */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer; /* Указатель для клика */
+}
+
+.tier-item img {
+    width: 199px;
+    height: 300px;
+    border-bottom: 1px solid #555; /* Более светлый серый для разделителя */
+    padding-bottom: 10px;
+}
+
+.tier-item h3 {
+    margin: 10px 0;
+}
+
+.tier-item .rank {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tier-item.rank-1 {
+    border-color: gold;
+    transform: scale(1.1);
+}
+
+.tier-item.rank-2 {
+    border-color: silver;
+    transform: scale(1.05);
+}
+
+.tier-item.rank-3 {
+    border-color: #cd7f32;
+    transform: scale(1.05);
+}
+
+.tier-item:hover {
+    transform: scale(1.1);
+    border-color: #fff; /* Белый цвет при наведении */
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .tier-item {
+        width: 120px; /* Уменьшение ширины панелей фильмов на планшетах */
+        height: 150px;
+    }
+    .tier-item img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tier-item {
+        width: 100px; /* Уменьшение ширины панелей фильмов на телефонах */
+        margin: 5px; /* Уменьшение отступов между панелями на телефонах */
+        padding: 5px; /* Уменьшение отступов внутри панелей на телефонах */
+    }
+
+    .tier-item h3 {
+        font-size: 12px; /* Уменьшение размера шрифта для заголовков на телефонах */
+    }
+
+    .tier-item .rank {
+        font-size: 10px; /* Уменьшение размера шрифта для рангов на телефонах */
+    }
+
+    .tier-item img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
